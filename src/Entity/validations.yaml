@@ -1,0 +1,30 @@
+App\Entity\Location:
+  properties:
+    city:
+      - NotBlank:
+          groups: ['new', 'edit']
+    country:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Length:
+          min: 2
+          max: 2
+          groups: ['new', 'edit']
+    latitude:
+      - Range:
+          min: -100
+          max: 100
+          groups: ['new', 'edit']
+
+App\Entity\Measurement:
+  properties:
+    date:
+      - NotBlank:
+          groups: ['new', 'edit']
+    celsius:
+      - NotBlank:
+          groups: ['new', 'edit']
+      - Range:
+          min: -20
+          max: 40
+          groups: ['new', 'edit']
